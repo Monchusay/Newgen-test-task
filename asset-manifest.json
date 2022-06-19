@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Newgen-test-task/static/css/main.8b1b8a90.css",
+    "main.js": "/Newgen-test-task/static/js/main.e050643e.js",
+    "static/js/787.f8f43f7c.chunk.js": "/Newgen-test-task/static/js/787.f8f43f7c.chunk.js",
+    "index.html": "/Newgen-test-task/index.html",
+    "static/media/ResetFiltersIcon.svg": "/Newgen-test-task/static/media/ResetFiltersIcon.6a04e0bfb967ebfb82ac2adad63d82f7.svg",
+    "static/media/ArrowRight.svg": "/Newgen-test-task/static/media/ArrowRight.e4d833d4f9d15be98155f48511efad64.svg",
+    "main.8b1b8a90.css.map": "/Newgen-test-task/static/css/main.8b1b8a90.css.map",
+    "main.e050643e.js.map": "/Newgen-test-task/static/js/main.e050643e.js.map",
+    "787.f8f43f7c.chunk.js.map": "/Newgen-test-task/static/js/787.f8f43f7c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b1b8a90.css",
+    "static/js/main.e050643e.js"
+  ]
+}
