@@ -1,21 +1,24 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import CoursesList from "./CoursesList";
-import {filterByPriceActionCreator} from "../../Redux/CoursesListReducer";
+import { filterByPriceActionCreator } from "../../Redux/CoursesListReducer";
 
 let mapStateToProps = (state) => {
-    return {
-        courses: state.CoursesList.filtratedCourses,
-    };
+  return {
+    courses: state.CoursesList.filtratedCourses,
+  };
 };
 
 let mapDispatchToProps = (dispatch) => {
-    return {
-        filterByPrice: (value) => {
-            dispatch(filterByPriceActionCreator(value))
-        }
-    };
+  return {
+    filterByPrice: (value) => {
+      dispatch(filterByPriceActionCreator(value));
+    },
+  };
 };
 
-const CoursesListContainer = connect(mapStateToProps, mapDispatchToProps)(CoursesList);
+const CoursesListContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CoursesList);
 
 export default CoursesListContainer;

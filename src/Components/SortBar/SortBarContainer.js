@@ -9,12 +9,12 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        filterByPrice: (value) => {
-            dispatch(filterByPriceActionCreator(value))
-        },
-        sortCourses: (value) => {
-            dispatch(sortCoursesActionCreator(value))
-        }
+      filterByPrice: (value) => {
+        dispatch(filterByPriceActionCreator(value));
+      },
+      sortCourses: (value) => {
+        dispatch(sortCoursesActionCreator(value));
+      },
     };
 };
 
