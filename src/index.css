@@ -5,9 +5,68 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.selectors__control {
+  cursor: pointer !important;
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 14px !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border-radius: 0 !important;
+  border-style: none !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+  flex-wrap: wrap !important;
+  outline: 0!important;
+}
+.selectors__control:hover {
+  border-color: transparent !important;
+}
+.selectors__control:hover .selectors__indicator {
+  color: rgba(18, 19, 84, 0.9) !important;
+}
+.selectors__placeholder {
+  color: #5E7793 !important;
+}
+.selectors__control:hover .selectors__placeholder {
+  color: rgba(18, 19, 84, 0.9) !important;
+}
+.selectors__control--menu-is-open .selectors__indicator {
+  color: rgba(18, 19, 84, 0.9) !important;
+}
+.selectors__control--menu-is-open .selectors__placeholder {
+  color: rgba(18, 19, 84, 0.9) !important;
+}
+.selectors__indicator-separator {
+  display: none !important;
+}
+.selectors__indicator {
+  color: #ADBFDF !important;
+  cursor: pointer !important;
+}
+.selectors__menu-list {
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 14px !important;
+}
+.selectors__option {
+  cursor: pointer !important;
+  color: #899CB1 !important;
+}
+.selectors__option:hover {
+  background-color:  rgba(18, 19, 84, 0.8) !important;
+  color: white !important;
+}
+.selectors__option--is-selected {
+  background-color: rgba(18, 19, 84, 0.8) !important;
+  color: white !important;
+}
+.info-select__single-value {
+  selectors: 'Roboto Slab', serif !important;
+  color: rgba(18, 19, 84, 0.8) !important;
 }

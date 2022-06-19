@@ -1,0 +1,22 @@
+.Header {
+    width: 60%;
+    height: 120px;
+    background-color: rgba(18, 19, 84, 0.9);
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.HeaderText {
+    width: 50%;
+    height: 80px;
+    margin-left: 50px;
+    display: flex;
+    font-family: 'Roboto Slab', serif;
+    align-items: center;
+    font-size: 45px;
+    color: white;
+    cursor: default;
+}

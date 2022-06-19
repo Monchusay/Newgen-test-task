@@ -1,0 +1,45 @@
+.SortBar {
+    width: 60%;
+    height: 60px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Selectors {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+}
+.PriceSelector {
+    width: 200px;
+    margin-left: 20px;
+}
+.SortSelector {
+    width: 250px;
+    margin-left: 20px;
+}
+.ResetFilters {
+    width: 170px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    margin-left: 20px;
+    color: #5E7793;
+    cursor: pointer;
+}
+.ResetFiltersIcon {
+    margin-left: 10px;
+    margin-top: 3px;
+}
+.ResetFilters:hover {
+    color: rgba(18, 19, 84, 0.9);
+}
+.ResetFilters:hover .ResetFiltersIcon * {
+    fill: rgba(18, 19, 84, 0.9);
+}

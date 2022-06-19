@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.App {
+  width: 1865px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
