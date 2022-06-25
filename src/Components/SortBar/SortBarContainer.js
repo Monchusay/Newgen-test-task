@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
-import {filterByPriceActionCreator, sortCoursesActionCreator} from "../../Redux/CoursesListReducer";
 import SortBar from "./SortBar";
+import {filterByPriceToolkitActionCreator, sortCoursesToolkitActionCreator} from "../../Redux/CoursesListToolkitSlicer";
 
 let mapStateToProps = (state) => {
     return {
@@ -10,10 +10,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
     return {
       filterByPrice: (value) => {
-        dispatch(filterByPriceActionCreator(value));
+        dispatch(filterByPriceToolkitActionCreator(value));
       },
       sortCourses: (value) => {
-        dispatch(sortCoursesActionCreator(value));
+        dispatch(sortCoursesToolkitActionCreator(value));
       },
     };
 };

@@ -1,3 +1,5 @@
+import { createAction, createReducer } from "@reduxjs/toolkit";
+
 let InitialState = {
   allCourses: [
     {
@@ -89,77 +91,62 @@ let InitialState = {
   ],
 };
 
-const CoursesListReducer = (state = InitialState, action) => {
-  switch (action.type) {
-    case "FILTER_BY_PRICE": {
-      if (action.value === "AllPrices") {
-        return { ...state, filtratedCourses: state.allCourses };
-      }
-      let mapping = {
-        Below200: {
-          courseMinPrice: 0,
-          courseMaxPrice: 200,
-        },
-        Between100and400: {
-          courseMinPrice: 100,
-          courseMaxPrice: 400,
-        },
-        Between400and700: {
-          courseMinPrice: 400,
-          courseMaxPrice: 700,
-        },
-        Between700and1000: {
-          courseMinPrice: 700,
-          courseMaxPrice: 1000,
-        },
-      };
-      let coursesFilteredByPrice = state.allCourses.filter(
-        (course) =>
-          course.courseMinPrice >= mapping[action.value].courseMinPrice &&
-          course.courseMaxPrice <= mapping[action.value].courseMaxPrice
-      );
+const filterByPriceToolkitActionCreator = createAction( "FILTER_BY_PRICE");
+const sortCoursesToolkitActionCreator = createAction("SORT_COURSES");
+
+createReducer(InitialState, {
+  [filterByPriceToolkitActionCreator]: function (state, action) {
+    if (action.value === "AllPrices") {
+      return { ...state, filtratedCourses: state.allCourses };
+    }
+    let mapping = {
+      Below200: {
+        courseMinPrice: 0,
+        courseMaxPrice: 200,
+      },
+      Between100and400: {
+        courseMinPrice: 100,
+        courseMaxPrice: 400,
+      },
+      Between400and700: {
+        courseMinPrice: 400,
+        courseMaxPrice: 700,
+      },
+      Between700and1000: {
+        courseMinPrice: 700,
+        courseMaxPrice: 1000,
+      },
+    };
+    let coursesFilteredByPrice = state.allCourses.filter(
+      (course) =>
+        course.courseMinPrice >= mapping[action.value].courseMinPrice &&
+        course.courseMaxPrice <= mapping[action.value].courseMaxPrice
+    );
+    return {
+      ...state,
+      filtratedCourses: coursesFilteredByPrice,
+    };
+  },
+  [sortCoursesToolkitActionCreator]: function (state, action) {
+    if (action.value === "Ascending") {
       return {
         ...state,
-        filtratedCourses: coursesFilteredByPrice,
+        filtratedCourses: [
+          ...state.filtratedCourses.sort(
+            (a, b) => a.courseMinPrice - b.courseMinPrice
+          ),
+        ],
       };
     }
-    case "SORT_COURSES": {
-      if (action.value === "Ascending") {
-        return {
-          ...state,
-          filtratedCourses: [
-            ...state.filtratedCourses.sort(
-              (a, b) => a.courseMinPrice - b.courseMinPrice
-            ),
-          ],
-        };
-      }
-      if (action.value === "Descending") {
-        return {
-          ...state,
-          filtratedCourses: [
-            ...state.filtratedCourses.sort(
-              (a, b) => b.courseMinPrice - a.courseMinPrice
-            ),
-          ],
-        };
-      }
+    if (action.value === "Descending") {
+      return {
+        ...state,
+        filtratedCourses: [
+          ...state.filtratedCourses.sort(
+            (a, b) => b.courseMinPrice - a.courseMinPrice
+          ),
+        ],
+      };
     }
-  }
-  return state;
-};
-
-/*export const filterByPriceActionCreator = (value) => {
-  return {
-    type: "FILTER_BY_PRICE",
-    value: value,
-  };
-};
-export const sortCoursesActionCreator = (value) => {
-  return {
-    type: "SORT_COURSES",
-    value: value,
-  };
-};*/
-
-/*export default CoursesListReducer;*/
+  },
+});

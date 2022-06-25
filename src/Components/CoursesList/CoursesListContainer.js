@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import CoursesList from "./CoursesList";
-import { filterByPriceActionCreator } from "../../Redux/CoursesListReducer";
 
 let mapStateToProps = (state) => {
   return {
@@ -10,9 +9,6 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    filterByPrice: (value) => {
-      dispatch(filterByPriceActionCreator(value));
-    },
   };
 };
 
